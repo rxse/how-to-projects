@@ -1,0 +1,44 @@
+{
+  "name": "webtestit-typescript-protractor",
+  "version": "1.0.0",
+  "description": "Protractor with TypeScript",
+  "author": "Ranorex GmbH",
+  "license": "MIT",
+  "keywords": [
+    "Ranorex",
+    "e2e",
+    "test-automation",
+    "protractor",
+    "typescript"
+  ],
+  "scripts": {
+    "clean": "rimraf dist",
+    "tsc": "tsc",
+    "pretest": "npm run clean && npm run tsc",
+    "test": "protractor protractor.conf.js",
+    "debug": "node --inspect-brk ./node_modules/.bin/protractor protractor.conf.js",
+    "selenium": "selenium-standalone start",
+    "selenium-webdriver-manager": "node ./node_modules/protractor/bin/webdriver-manager update --gecko false --chrome false",
+    "postinstall": "selenium-standalone install"
+  },
+  "dependencies": {
+    "@rxse/selenium-standalone": "0.15.1",
+    "@types/mz": "0.0.32",
+    "https-proxy-agent": "^2.2.1",
+    "jasmine": "^3.1.0",
+    "jasmine-reporters": "^2.3.0",
+    "mz": "^2.7.0",
+    "protractor": "^5.4.2"
+  },
+  "devDependencies": {
+    "@rxse/webtestit-lint-rules": "^1.0.0",
+    "@types/jasmine": "^2.8.6",
+    "@types/jasminewd2": "^2.0.3",
+    "@types/mz": "0.0.32",
+    "rimraf": "^2.6.2",
+    "ts-node": "^5.0.1",
+    "tslint": "^5.11.0",
+    "tslint-language-service": "^0.9.9",
+    "typescript": "^3.0.1"
+  }
+}
